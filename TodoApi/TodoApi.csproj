@@ -12,7 +12,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.6.2" />
   </ItemGroup>
 
-  <!-- https://gist.github.com/VincentH-Net/a950fb18363111ccac8e1fb64123647e -->
+  <!-- For Build OpenAPI JSON into File https://gist.github.com/VincentH-Net/a950fb18363111ccac8e1fb64123647e -->
+  <!-- Use `dotnet watch` will make hot reload the build target will not run https://stackoverflow.com/a/76222973 -->
+  <!-- In case, you want to render every time web reload use `no-hot-reload` -->
   <Target Name="OpenAPI" AfterTargets="Build" Condition="$(Configuration)=='Debug'">
     <Exec Command="dotnet tool run swagger tofile --output openapi.json $(TargetPath) v1" />
   </Target>
