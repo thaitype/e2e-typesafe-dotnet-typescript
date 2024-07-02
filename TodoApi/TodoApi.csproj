@@ -9,6 +9,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.6.2" />
   </ItemGroup>
+
+  <!-- https://gist.github.com/VincentH-Net/a950fb18363111ccac8e1fb64123647e -->
+  <Target Name="OpenAPI" AfterTargets="Build" Condition="$(Configuration)=='Debug'">
+    <Exec Command="dotnet tool run swagger tofile --output openapi.json $(TargetPath) v1" />
+  </Target>
 
 </Project>
