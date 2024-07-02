@@ -11,20 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-
-    c.SwaggerDoc("api", new OpenApiInfo
-    {
-        Title = "Public API",
-        Version = "v1",
-        Description = "Public API"
-    });
-    c.SwaggerDoc("bff", new OpenApiInfo
-    {
-        Title = "BFF API",
-        Version = "v1",
-        Description = "Backend for Frontend API"
-    });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 });
+
 
 
 var app = builder.Build();
@@ -32,16 +21,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(c =>
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
     {
-        c.RouteTemplate = "swagger/{documentName}/swagger.json";
-    });
-    // app.UseSwaggerUI();
-     app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/api/swagger.json", "Public API V1");
-        c.SwaggerEndpoint("/swagger/bff/swagger.json", "BFF API V1");
-        c.RoutePrefix = "swagger";
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
     });
 }
 
