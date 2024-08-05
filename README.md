@@ -25,7 +25,22 @@ https://stackoverflow.com/a/76222973
 dotnet watch run --no-hot-reload --launch-profile https
 ```
 
-## Convert to Zodios Client
+## Run openapi watch only
+
+```
+dotnet watch build  -- --configuration Gen
+```
+
+## Ref
+
+- https://chrlschn.dev/blog/2023/10/end-to-end-type-safety-with-dotnet7-webapis-typescript-openapi/
+
+## TypeScript Client
+
+~~https://github.com/ferdikoomen/openapi-typescript-codegen~~
+https://github.com/hey-api/openapi-ts
+
+### Convert to Zodios Client
 
 https://github.com/astahmer/openapi-zod-client
 
@@ -36,13 +51,3 @@ pnpx openapi-zod-client "openapi.json" -o "./client.ts"
 see, https://github.com/astahmer/typed-openapi
 
 use via npm `https://github.com/astahmer/openapi-zod-client/blob/HEAD/examples/basic/petstore-generator.ts`
-
-## Run openapi watch only
-
-```
-dotnet watch build  -- --configuration Gen
-```
-
-## Ref
-
-- https://chrlschn.dev/blog/2023/10/end-to-end-type-safety-with-dotnet7-webapis-typescript-openapi/
