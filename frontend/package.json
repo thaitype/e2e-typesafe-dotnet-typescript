@@ -1,0 +1,32 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "web:dev": "next dev",
+    "dev": "run-p web:dev typegen:watch openapi:gen",
+    "build": "next build",
+    "start": "next start",
+    "typegen:watch": "nodemon --watch ../WeatherApi/openapi/openapi.json --exec \"npm run typegen\"",
+    "openapi:gen": "cd ../WeatherApi && dotnet watch build  -- --configuration Gen",
+    "typegen": "openapi-typescript ../WeatherApi/openapi/openapi.json -o lib/api/schema.ts",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "openapi-fetch": "^0.10.6",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "nodemon": "^3.1.4",
+    "npm-run-all": "^4.1.5",
+    "openapi-typescript": "^7.3.0",
+    "typescript": "^5"
+  }
+}

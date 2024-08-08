@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
-using TodoApi.Api.Controllers;
-using TodoApi.Bff.Controllers;
+using WeatherApi.Api.Controllers;
+using WeatherApi.Bff.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 

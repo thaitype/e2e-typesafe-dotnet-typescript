@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TodoApi.Api.Controllers;
+namespace WeatherApi.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
