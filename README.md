@@ -1,5 +1,11 @@
 # E2E Type Safety with .NET 8 Minimal API and TypeScript
 
+Demo screen cast:
+
+![Demo](./docs/demo.gif)
+
+The video is sped up 2x-4x. The actual time after the .NET code changes and affect the TypeScript code is around 10-15 seconds.
+
 ## Setup
 
 ```
