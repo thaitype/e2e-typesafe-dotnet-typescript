@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TodoApi.Bff.Controllers;
+namespace WeatherApi.Bff.Controllers;
 
 [ApiController]
 [Route("bff/[controller]")]
